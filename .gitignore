@@ -41,7 +41,6 @@ node_modules/
 jspm_packages/
 
 # Distribution Verzeichnisse
-dist/
 out/
 build/
 
