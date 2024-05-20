@@ -113,7 +113,7 @@ body {
   overflow: hidden;
   display: flex;
   justify-content: center;
-  align-items: end;
+  align-items: center;
   height: 100%;
   width: 100%;
   top: 0;
@@ -144,13 +144,24 @@ body {
 .photo-grid button {
   padding: 0.65rem 1.25rem;
   border-radius: 10vh;
-  visibility: hidden;
+  visibility: visible;
   border: none;
+  margin-bottom: 1rem;
   background: rgba(0, 0, 0, 0.65);
   color: #f5f5f7;
   outline: 1px solid #f5f5f7;
   outline-offset: 3px;
   z-index: 2;
+  margin-top: auto;
+  cursor: pointer;
+}
+
+@media screen and (min-width: 800px) {
+  .photo-grid button {
+    margin-bottom: 0;
+    margin-top: 0;
+    visibility: hidden;
+  }
 }
 
 .photo-grid a:hover button {
@@ -217,7 +228,7 @@ body {
   margin-top: 0.75rem;
 }
 
-h2{
+h2 {
   margin: 0;
 }
 
@@ -225,6 +236,7 @@ h2{
   font-size: 2.25rem;
   text-align: center;
   font-weight: 400;
+  text-wrap: balance;
   line-height: 2.75rem;
   margin: 1rem 0;
 }
@@ -346,19 +358,20 @@ h2{
   padding: 1rem 1.5rem;
   box-shadow: rgba(33, 35, 38, 0.1) 0px 10px 10px -10px;
   border-radius: 5px;
-  min-width: 20rem;
+  min-width: 15rem;
 }
 .item h3 {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  text-wrap: nowrap;
+  text-wrap: balance;
   margin: 0;
 }
-.item h3 svg {
+.item h3 img {
   margin: 0 0.5rem 0 -0.75rem;
 }
 .item p {
   margin: 0.5rem 0 0 0;
+  max-width: 14rem;
 }
 
 /* Carusel */
@@ -382,18 +395,17 @@ h2{
   }
 }
 
-
 .light-section,
-.dark-section{
+.dark-section {
   padding: 1.5rem 0 3rem 0;
 }
 
-.light-section{
+.light-section {
   background: #f9edf1;
-background: linear-gradient(90deg, #f9edf1 0%, transparent 100%);
+  background: linear-gradient(90deg, #f9edf1 0%, transparent 100%);
 }
 
-.dark-section{
+.dark-section {
   background: #c3b6b1;
   background: linear-gradient(90deg, transparent 0%, #c3b6b1 100%);
 }
