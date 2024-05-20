@@ -1,0 +1,59 @@
+# macOS spezifische Dateien
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Ordner, die für macOS spezifisch sind
+Icon
+__MACOSX
+
+# Thumbnails
+._*
+
+# Temporary Dateien
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+.metadata_never_index
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# VS Code spezifische Dateien
+.vscode/
+.vscode/extensions.json
+.vscode/settings.json
+.vscode/tasks.json
+.vscode/launch.json
+
+# Log-Dateien
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Dependency Verzeichnisse
+node_modules/
+jspm_packages/
+
+# Distribution Verzeichnisse
+dist/
+out/
+build/
+
+# Systemdateien
+Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# IDEs und Editoren
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
