@@ -1,49 +1,38 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const carousel = document.querySelector('.carousel');
-    let isDown = false;
-    let startX;
-    let scrollLeft;
-
-    carousel.addEventListener('mousedown', (e) => {
+document.addEventListener("DOMContentLoaded", () => {
+    const carousels = document.querySelectorAll(".carousel");
+  
+    carousels.forEach((carousel) => {
+      let isDown = false;
+      let startX;
+      let scrollLeft;
+  
+      carousel.addEventListener("mousedown", (e) => {
         isDown = true;
-        carousel.classList.add('active');
+        carousel.classList.add("active");
         startX = e.pageX - carousel.offsetLeft;
         scrollLeft = carousel.scrollLeft;
-    });
-
-    carousel.addEventListener('mouseleave', () => {
+      });
+  
+      carousel.addEventListener("mouseleave", () => {
         isDown = false;
-        carousel.classList.remove('active');
-    });
-
-    carousel.addEventListener('mouseup', () => {
+        carousel.classList.remove("active");
+      });
+  
+      carousel.addEventListener("mouseup", () => {
         isDown = false;
-        carousel.classList.remove('active');
-    });
-
-    carousel.addEventListener('mousemove', (e) => {
+        carousel.classList.remove("active");
+      });
+  
+      carousel.addEventListener("mousemove", (e) => {
         if (!isDown) return;
         e.preventDefault();
         const x = e.pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 3; //scroll-fast
+        const walk = (x - startX) * 2; // Multipliziert die Bewegung für schnelleres Scrollen
         carousel.scrollLeft = scrollLeft - walk;
+      });
+  
+      // Textauswahl deaktivieren
+      carousel.addEventListener("dragstart", (e) => e.preventDefault());
     });
-
-    // Touch events for mobile devices
-    carousel.addEventListener('touchstart', (e) => {
-        isDown = true;
-        startX = e.touches[0].pageX - carousel.offsetLeft;
-        scrollLeft = carousel.scrollLeft;
-    });
-
-    carousel.addEventListener('touchend', () => {
-        isDown = false;
-    });
-
-    carousel.addEventListener('touchmove', (e) => {
-        if (!isDown) return;
-        const x = e.touches[0].pageX - carousel.offsetLeft;
-        const walk = (x - startX) * 3; //scroll-fast
-        carousel.scrollLeft = scrollLeft - walk;
-    });
-});
+  });
+  
